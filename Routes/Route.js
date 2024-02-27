@@ -123,7 +123,7 @@ router.delete("/raison", DeleteRaison)
 router.put("/raison", UpdateRaison)
 
 //Agent
-router.post("/addAdminAgent", protect, AddAdminAgent)
+router.post("/addAdminAgent", AddAdminAgent)
 router.put("/resetPasswordAgentAdmin", protect, ResetPasswords)
 router.get("/readAgentAdmin", protect, ReadAgentAdmin)
 router.put('/bloquerAgentAdmin', protect, BloquerAgentAdmin)
