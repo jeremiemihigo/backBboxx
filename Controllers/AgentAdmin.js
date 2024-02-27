@@ -8,14 +8,14 @@ module.exports = {
   AddAdminAgent: (req, res) => {
     try {
       const { nom, fonction, telephone, code } = req.body
-      const { codeAgent } = req.user //Agent admin qui fait l'operation
+      const  codeAgent ="j.mihigo" //Agent admin qui fait l'operation
       if (!nom || !fonction || !telephone || !code) {
         return res.status(404).json('Veuillez renseigner les champs')
       }
       asyncLab.waterfall(
         [
           function (done) {
-            ModelAgentAdmin.findOne({ $or: [{ codeAgent : code }, { telephone }] })
+            ModelAgentAdmin.findOne({ telephone })
               .then((agent) => {
                 if (agent) {
                   return res
