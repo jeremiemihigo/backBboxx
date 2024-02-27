@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const connectDB = async () => {
   await mongoose.connect(
-    process.env.MONGODB_URL,
+    "mongodb://127.0.0.1:27017/bboxx",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
